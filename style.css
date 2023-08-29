@@ -92,7 +92,8 @@ body {
 .info h2,
 .story h2,
 .gallery h2,
-.rsvp h2{
+.rsvp h2,
+.gifts h2 {
     color: var(--pink);
     font-family: 'Sacramento';
     font-size: 5rem;
@@ -181,13 +182,14 @@ body {
 
 .story,
 .gallery,
-.rsvp {
+.rsvp,
+.gifts {
     padding-top: 10rem;
     padding-bottom: 8rem;
 }
 
 .story span,
-.gallery span {
+.gallery span, .gifts span {
     text-transform: uppercase;
     color: #666;
     font-size: 0.9rem;
@@ -305,7 +307,7 @@ body {
     right: auto;
 }
 
-.gallery {
+.gallery, .gifts {
     background-image: url(img/bg.png);
     background-size: cover;
     background-color: #f5f5f5;
@@ -337,6 +339,28 @@ body {
     background-color: white;
     color: var(--pink);
     border: 1px solid white;
+}
+
+footer {
+    padding: 3rem;
+    background-color: var(--pink);
+    color: white;
+}
+
+footer a {
+    color: var(--bs);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: white;
+}
+
+footer li {
+    list-style: none;
+    display: inline;
+    margin: 0.5rem;
 }
 
 /* Media Query */
@@ -415,6 +439,21 @@ body {
         width: 140px;
         height: 140px;
     }
+
+    .mynavbar .offcanvas {
+        visibility: visible;
+        width: 200px;
+        /*transition: width 0.3s;*/
+    }
+
+    .offcanvas-menu {
+        right: 0; /* Bring the menu onto the screen */
+    }
+
+    /* Hide the menu when not needed */
+    body.offcanvas-open .offcanvas-menu {
+        right: -300px;
+    }
 }
 
 /* mobile phone */
@@ -423,9 +462,28 @@ body {
         font-size: 60%;
     }
 
+    .navbar {
+        display: none;
+    }
+
     .mynavbar .nav-link {
         font-size: 1.5rem;
         text-align: center;
+    }
+
+    .mynavbar .offcanvas {
+        visibility: visible;
+        width: 200px;
+        /*transition: width 0.3s;*/
+    }
+
+    .offcanvas-menu {
+        right: 0; /* Bring the menu onto the screen */
+    }
+
+    /* Hide the menu when not needed */
+    body.offcanvas-open .offcanvas-menu {
+        right: -300px;
     }
 
     .simply-countdown > .simply-section {

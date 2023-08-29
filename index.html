@@ -22,6 +22,33 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
     <link rel="stylesheet" href="style.css">
+
+    <script>
+        // JavaScript code to extract and display the query parameter
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get the parameter value from the URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const paramValue = urlParams.get("nama");
+
+            // Find the <span> element by its ID and update its content
+            const paramSpan = document.getElementById("nama-value");
+            paramSpan.textContent = paramValue;
+        });
+    </script>
+    <script>
+        function copyText() {
+            var paragraph = document.getElementById("bca");
+            var textToCopy = paragraph.textContent;
+
+            navigator.clipboard.writeText(textToCopy)
+                .then(function() {
+                    alert("Text copied: " + textToCopy);
+                })
+                .catch(function(error) {
+                    console.error("Error copying text: ", error);
+                });
+        }
+    </script>
 </head>
 
 <body>
@@ -33,7 +60,7 @@
 <section id="hero"
          class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white">
     <main>
-        <h4>Kepada Bapak/Ibu/Saudara/i,</h4>
+            <h4>Kepada<br></br>Bapak/Ibu/Saudara/i <span id="nama-value"></span>,</h4>
         <h1>Dhea & Rico</h1>
         <p>Akan melangsungkan resepsi pernikahan dalam:</p>
         <div class="simply-countdown"></div>
@@ -84,7 +111,7 @@
                 <div class="row">
                     <div class="col-8 text-end">
                         <h3>Nadhea Farhanna</h3>
-                        <p>Putri dari Bpk. Gatot Sularso. (Alm) <br> dan <br> Ibu Imun Nurhayati</p>
+                        <p style="font-size: 1.5rem">Putri dari Bpk. Gatot Sularso. (Alm) <br> dan <br> Ibu Imun Nurhayati</p>
                     </div>
                     <div class="col-4">
                         <img src="img/dhea.jpg" alt="Nadhea Farhanna" class="img-responsive rounded-circle">
@@ -101,7 +128,7 @@
                     </div>
                     <div class="col-8">
                         <h3>Fedrico Kadifa</h3>
-                        <p>Putra dari Bpk. Mihardi <br> dan <br> Ibu Hartini</p>
+                        <p style="font-size: 1.8rem">Putra dari Bpk. Mihardi <br> dan <br> Ibu Hartini</p>
                     </div>
                 </div>
             </div>
@@ -187,7 +214,7 @@
                                 <span>17 april 2018</span>
                             </div>
                             <div class="timeline-body">
-                                <p>Kami bertemu pertama di tempat kerja yaitu Indomaret Tanah Merdeka Ciracas
+                                <p>Kami bertemu pertama di tempat kerja yaitu Indomaret Tanah Merdeka 2 Ciracas
                                 </p>
                             </div>
                         </div>
@@ -210,7 +237,7 @@
 
                     </li>
                     <li>
-                        <div class="timeline-image" style="background-image: url(img/lamaran.png); background-size: auto; margin-top: 50px"></div>
+                        <div class="timeline-image" style="background-image: url(https://picsum.photos/301/301); background-size: auto; margin-top: 50px"></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h3>Lamaran</h3>
@@ -312,6 +339,89 @@
     </div>
 </section>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var bca = document.getElementById("bca");
+        var mandiri = document.getElementById("mandiri");
+
+        bca.addEventListener('click', function() {
+            var textToCopy = bca.textContent;
+
+            navigator.clipboard.writeText(textToCopy)
+                .then(function() {
+                    alert("Text copied: " + textToCopy);
+                })
+                .catch(function(error) {
+                    console.error("Error copying text: ", error);
+                });
+        });
+
+        mandiri.addEventListener('click', function() {
+            var textToCopy = mandiri.textContent;
+
+            navigator.clipboard.writeText(textToCopy)
+                .then(function() {
+                    alert("Text copied: " + textToCopy);
+                })
+                .catch(function(error) {
+                    console.error("Error copying text: ", error);
+                });
+        });
+    });
+</script>
+
+<section id="gifts" class="gifts">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-10 text-center">
+                <span>Ungkapan Kasih Sayang</span>
+                <h2>Kirim Hadiah</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center text-center">
+            <div class="col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <div class="fw-bold">BCA</div>
+                        <a class="btn" id="bca" style="font-size: 2rem">6281184102</a>
+                        <p>NADHEA FARHANNA</p>
+
+                    </li>
+                    <li class="list-group-item">
+                        <div class="fw-bold">MANDIRI</div>
+                        <a class="btn" id="mandiri" style="font-size: 2rem">1290013023219</a>
+                        <p>NADHEA FARHANNA</p>
+
+                    </li>
+                    <li class="list-group-item">
+                        <div class="fw-bold">GOPAY</div>
+                        <a href="img/qr.jpg" download>
+                        <img src="img/qr.jpg" alt="QR Code" class="img-thumbnail" width="250">
+                        </a>
+                    </li>
+                </ul>
+                <p style="font-style: italic; font-size: 1.3rem; text-align: left">&divideontimes;Klik (No. Rek/QR CODE) untuk menyalin/Unduh file</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <small class="block">&copy; 2023 Dhea & Rico Wedding. All Rights Reserved.</small>
+                <small class="block">Design by <a href="https://www.instagram.com/rtwidiantoro/" target="_blank">@rtwidiantoro</a>.</small>
+
+                <ul class="mt-3">
+                    <li>
+                        <a href="https://www.instagram.com/kdfa23/?igshid=OGQ5ZDc2ODk2ZA==" target="_blank"><i class="bi bi-instagram"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
